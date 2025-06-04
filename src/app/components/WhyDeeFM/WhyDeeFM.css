@@ -1,0 +1,135 @@
+.why-deefm-block-section {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-deefm-block-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.why-deefm-block-content {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.why-deefm-block-subtitle {
+  color: #f94144;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.why-deefm-block-title {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  line-height: 1.2;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.why-deefm-block-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.why-deefm-block-watermark-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  70% {
+    transform: scale(0.9) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+  .why-deefm-block-section {
+    padding: 60px 0;
+  }
+
+  .why-deefm-block-container {
+    padding: 0 16px;
+  }
+
+  .why-deefm-block-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .why-deefm-block-features-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .why-deefm-block-watermark-text {
+    font-size: 120px;
+    opacity: 0.01;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-deefm-block-title {
+    font-size: 28px;
+  }
+
+  .why-deefm-block-subtitle {
+    font-size: 16px;
+  }
+
+  .why-deefm-block-watermark-text {
+    font-size: 80px;
+  }
+}

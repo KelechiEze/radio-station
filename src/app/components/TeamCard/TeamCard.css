@@ -1,0 +1,173 @@
+.team-card {
+  flex: 1;
+  max-width: 280px;
+}
+
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 24px;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.team-card:hover .card-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.team-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-link {
+  color: #f44336;
+  background: rgba(255, 255, 255, 0.1);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+  background: rgba(244, 67, 54, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(244, 67, 54, 0.3);
+  color: white;
+}
+
+.card-content {
+  text-align: left;
+}
+
+.card-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ff6b35;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.card-role {
+  font-size: 16px;
+  color: #cccccc;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+  .team-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .card-image-container {
+    height: 300px;
+  }
+  
+  .card-overlay {
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .social-icons {
+    flex-direction: row;
+    gap: 12px;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .card-name {
+    font-size: 22px;
+  }
+  
+  .card-role {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-image-container {
+    height: 280px;
+  }
+  
+  .social-icons {
+    gap: 10px;
+  }
+  
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .card-name {
+    font-size: 20px;
+  }
+}
+
+/* Smooth animations for better performance */
+.card-overlay,
+.card-image,
+.social-link {
+  will-change: transform;
+}
+
+/* Touch devices optimization */
+@media (hover: none) and (pointer: coarse) {
+  .team-card:active .card-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .team-card:active .card-image {
+    transform: scale(1.05);
+  }
+}

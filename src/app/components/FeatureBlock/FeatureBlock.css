@@ -1,0 +1,127 @@
+.deefm-feature-block {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  animation: deefm-bounceIn 0.8s ease-out forwards;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.deefm-feature-block:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.deefm-feature-icon-container {
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.deefm-feature-icon {
+  color: #f94144;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: deefm-bounceIcon 2s ease-in-out infinite;
+}
+
+.deefm-feature-block:hover .deefm-feature-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.5));
+}
+
+.deefm-feature-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.deefm-feature-block:hover .deefm-feature-title {
+  color: #f94144;
+}
+
+.deefm-feature-description {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.deefm-feature-block:hover .deefm-feature-description {
+  color: #d1d5db;
+}
+
+@keyframes deefm-bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  70% {
+    transform: scale(0.95) translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes deefm-bounceIcon {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+  .deefm-feature-block {
+    padding: 32px 24px;
+    margin-bottom: 20px;
+  }
+
+  .deefm-feature-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .deefm-feature-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .deefm-feature-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .deefm-feature-block {
+    padding: 24px 16px;
+  }
+
+  .deefm-feature-title {
+    font-size: 16px;
+  }
+
+  .deefm-feature-description {
+    font-size: 13px;
+  }
+}

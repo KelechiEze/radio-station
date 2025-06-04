@@ -1,0 +1,97 @@
+.team-section {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.team-cards {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.team-content {
+  flex: 1;
+  max-width: 400px;
+}
+
+.team-badge {
+  color: #ff6b35;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.team-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 32px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+  .team-section {
+    padding: 40px 16px;
+  }
+  
+  .team-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .team-cards {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .team-content {
+    max-width: 100%;
+    order: -1;
+  }
+  
+  .team-title {
+    font-size: 36px;
+  }
+  
+  .team-description {
+    font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto 32px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-title {
+    font-size: 28px;
+  }
+  
+  .team-cards {
+    gap: 16px;
+  }
+}
