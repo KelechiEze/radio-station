@@ -240,12 +240,12 @@
   margin: 0;
 }
 
-.play-button {
+.play-button2 {
   display: flex;
   justify-content: center;
 }
 
-.play-btn {
+.play-btn2 {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -260,7 +260,7 @@
   animation: pulse 2s infinite;
 }
 
-.play-btn:hover {
+.play-btn2:hover {
   background: #f94144;
   color: #000;
   transform: scale(1.1);

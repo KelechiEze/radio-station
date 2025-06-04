@@ -73,8 +73,8 @@ const HomeView = () => {
           </div>
           
           {/* Play Button */}
-          <div className="play-button">
-            <button className="play-btn">
+          <div className="play-button2">
+            <button className="play-btn2">
               <Play size={32} fill="#f94144" />
             </button>
           </div>
