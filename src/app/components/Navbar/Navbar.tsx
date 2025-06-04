@@ -37,12 +37,7 @@ const Navbar = () => {
           <ul className="navbar-links">
             <li><a href="#" className="navbar-link">Home</a></li>
             <li><a href="#" className="navbar-link">About Us</a></li>
-            <li className="navbar-dropdown">
-              <a href="#" className="navbar-link">Pages <ChevronDown size={16} /></a>
-            </li>
-            <li className="navbar-dropdown">
-              <a href="#" className="navbar-link">Article & News <ChevronDown size={16} /></a>
-            </li>
+            <li><a href="#" className="navbar-link">Give</a></li>
             <li><a href="#" className="navbar-link">Contact Us</a></li>
           </ul>
 

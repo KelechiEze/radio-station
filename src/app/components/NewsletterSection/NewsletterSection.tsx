@@ -25,7 +25,7 @@ const NewsletterSection = () => {
   };
 
   const handleWhatsAppRedirect = () => {
-    const phoneNumber = '2348123456789'; // Replace with owner's WhatsApp number
+    const phoneNumber = '2349166798290'; // Replace with owner's WhatsApp number
     const message = encodeURIComponent("Hello, I’d like to give now in support of your mission.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
