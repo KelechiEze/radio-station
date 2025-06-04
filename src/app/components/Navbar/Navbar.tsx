@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import {
-  Grid3X3, X, ChevronDown, Facebook, Instagram, Youtube, Twitter,
+  Grid3X3, X, Facebook, Instagram, Youtube, Twitter,
   MapPin, Phone, Mail, Globe
 } from 'lucide-react';
 import './Navbar.css';
