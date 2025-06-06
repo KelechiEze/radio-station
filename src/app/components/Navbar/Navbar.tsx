@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   Grid3X3, X, Facebook, Instagram, Youtube, Twitter,
   MapPin, Phone, Mail, Globe
@@ -9,14 +10,19 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleMobileNav = () => {
+    setIsMobileNavOpen(!isMobileNavOpen);
+  };
+
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
-  }, [isMenuOpen]);
+    document.body.style.overflow = (isMenuOpen || isMobileNavOpen) ? 'hidden' : 'unset';
+  }, [isMenuOpen, isMobileNavOpen]);
 
   return (
     <>
@@ -24,13 +30,13 @@ const Navbar = () => {
         <div className="navbar-container">
           {/* Logo */}
           <div className="navbar-logo">
-            <h1 className="navbar-logo-text">
-              P<span className="navbar-logo-mic">🎙️</span>dverse
-            </h1>
-            <div className="navbar-logo-subtitle">
-              <span>RADIO</span>
-              <span>PODCAST</span>
-            </div>
+            <Image
+              src="/rapset.png"
+              alt="Podverse Logo"
+              width={160}
+              height={90}
+              className="navbar-logo-image"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -44,12 +50,40 @@ const Navbar = () => {
           {/* Right Side Buttons */}
           <div className="navbar-actions">
             <button className="navbar-talk-btn">Let&apos;s Talk</button>
+            
+            {/* Mobile Navigation Hamburger - visible only on mobile */}
+            <button className="navbar-mobile-nav-btn" onClick={toggleMobileNav} aria-label="Toggle mobile navigation">
+              <div className="hamburger-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </button>
+
             <button className="navbar-grid-btn" onClick={toggleMenu} aria-label="Toggle menu">
               <Grid3X3 size={20} />
             </button>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Navigation Dropdown */}
+      <div className={`mobile-nav-overlay ${isMobileNavOpen ? 'mobile-nav-overlay-active' : ''}`}>
+        <div className={`mobile-nav-dropdown ${isMobileNavOpen ? 'mobile-nav-dropdown-active' : ''}`}>
+          <button className="mobile-nav-close" onClick={toggleMobileNav}>
+            <X size={24} />
+          </button>
+          
+          <div className="mobile-nav-content">
+            <ul className="mobile-nav-links">
+              <li><a href="#" className="mobile-nav-link" onClick={toggleMobileNav}>Home</a></li>
+              <li><a href="#" className="mobile-nav-link" onClick={toggleMobileNav}>About Us</a></li>
+              <li><a href="#" className="mobile-nav-link" onClick={toggleMobileNav}>Give</a></li>
+              <li><a href="#" className="mobile-nav-link" onClick={toggleMobileNav}>Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       {/* Sidebar and Overlay */}
       <div className={`sidebar-overlay ${isMenuOpen ? 'overlay-active' : ''}`} onClick={toggleMenu}>
@@ -63,9 +97,13 @@ const Navbar = () => {
 
           <div className="sidebar-content">
             <div className="sidebar-logo">
-              <h2 className="sidebar-logo-text">
-                P<span className="navbar-logo-mic">🎙️</span>dverse
-              </h2>
+              <Image
+                src="/twu.png"
+                alt="Podverse Logo"
+                width={140}
+                height={50}
+                className="sidebar-logo-image"
+              />
               <p className="sidebar-tagline">Radio Station & Podcaster</p>
               <div className="sidebar-divider"></div>
             </div>
