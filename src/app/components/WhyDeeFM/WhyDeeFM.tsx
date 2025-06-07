@@ -35,7 +35,7 @@ const WhyDeeFM = () => {
     <section className="why-deefm-block-section">
       <div className="why-deefm-block-container">
         <div className="why-deefm-block-content">
-          <p className="why-deefm-block-subtitle">Why DeeFM?</p>
+          <p className="why-deefm-block-subtitle">Why RapRadio?</p>
           <h2 className="why-deefm-block-title">
             Why You Should Listen To Our Voices?
           </h2>

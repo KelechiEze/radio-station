@@ -9,6 +9,7 @@ import NewsletterSection from "./components/NewsletterSection/NewsletterSection"
 import TeamSection from "./components/TeamSection/TeamSection";
 import TestimonialSection from "./components/TestimonialSection/TestimonialSection"; // Replace with full name
 import WhyDeeFM from "./components/WhyDeeFM/WhyDeeFM";
+import FAQ from './components/FAQ/FAQ';
 import ContactSection from './components/ContactSection/ContactSection';
 import Footer from "./components/Footer/Footer";
 
@@ -24,6 +25,7 @@ export default function HomePage() {
       <WhyDeeFM />
       <TeamSection />
       <TestimonialSection />
+      <FAQ />
       <ContactSection />
       <NewsletterSection />
       <Footer />

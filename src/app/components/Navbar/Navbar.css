@@ -26,7 +26,7 @@
 }
 
 .navbar-logo-image {
-  width: 120px;
+  width: 70px;
   height: auto;
   max-height: 50px;
   object-fit: contain;
@@ -343,6 +343,13 @@ body.sidebar-open {
   font-weight: 700;
   color: white;
   margin: 0 0 8px 0;
+}
+
+.sidebar-logo-image{
+  width: 70px;
+  height: auto;
+  max-height: 50px;
+  object-fit: contain;
 }
 
 .sidebar-tagline {

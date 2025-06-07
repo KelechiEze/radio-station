@@ -5,7 +5,7 @@ import './HomeView.css';
 
 const HomeView = () => {
   return (
-    <section className="home-view">
+    <section id="home" className="home-view">
       <div className="home-container">
         {/* Left Column */}
         <div className="home-left">

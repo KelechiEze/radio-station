@@ -6,7 +6,7 @@ import './AboutSection.css';
 
 const AboutSection = () => {
   return (
-    <section className="about-section">
+    <section id="about-us" className="about-section">
       <div className="about-container">
         {/* Left Side - Main Content */}
         <div className="about-content">

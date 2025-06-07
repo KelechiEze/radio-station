@@ -39,7 +39,7 @@ const TeamSection = () => {
         </div>
         <div className="team-content">
           <div className="team-badge">Broadcaster</div>
-          <h2 className="team-title">Meet DeeFM Broadcaster</h2>
+          <h2 className="team-title">Meet RapRadio Broadcasters</h2>
           <p className="team-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed leo placerat, 
             sollicitudin lacus nec, porta lacus. Cras ac turpis ut sem dictum luctus. Nam rhoncus, 

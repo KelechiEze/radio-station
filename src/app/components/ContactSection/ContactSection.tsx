@@ -6,7 +6,7 @@ import './ContactSection.css';
 
 const ContactSection: React.FC = () => {
   return (
-    <div className="contact-section">
+    <div id="contact-us" className="contact-section">
       <div className="contact-container">
         <div className="contact-content">
           <div className="contact-image">
