@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
-  Grid3X3, X, Facebook, Instagram, Youtube, Twitter,
-  MapPin, Phone, Mail, Globe
+  Grid3X3, X, Facebook, Instagram, Youtube, Twitter, Twitch,
+  MapPin, Phone, Mail, Globe 
 } from 'lucide-react';
 import './Navbar.css';
 
@@ -140,12 +140,15 @@ const Navbar = () => {
                 <button className="sidebar-subscribe-btn">Subscribe</button>
               </div>
 
-              <div className="sidebar-social-icons">
-                <a href="#" className="sidebar-social-icon"><Facebook size={18} /></a>
-                <a href="#" className="sidebar-social-icon"><Twitter size={18} /></a>
-                <a href="#" className="sidebar-social-icon"><Instagram size={18} /></a>
-                <a href="#" className="sidebar-social-icon"><Youtube size={18} /></a>
-              </div>
+           <div className="sidebar-social-icons">
+            <a href="https://www.facebook.com/rapradioafrica" className="sidebar-social-icon"><Facebook size={18} /></a>
+            <a href="https://x.com/rapradioafrica" className="sidebar-social-icon"><Twitter size={18} /></a>
+            <a href="https://www.instagram.com/rapradioafrica/" className="sidebar-social-icon"><Instagram size={18} /></a>
+            <a href="https://www.youtube.com/@rapradioafrica" className="sidebar-social-icon"><Youtube size={18} /></a>
+            <a href="https://www.twitch.tv/rapradioafrica" className="sidebar-social-icon"><Twitch size={18} /></a>
+          </div>
+
+
             </div>
           </div>
         </div>

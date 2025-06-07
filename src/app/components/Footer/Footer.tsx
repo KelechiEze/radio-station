@@ -94,16 +94,16 @@ const Footer = () => {
             <span>Copyright © 2024 Rometheme. All Rights Reserved.</span>
           </div>
           <div className="social-links">
-            <a href="#" className="social-link" aria-label="Facebook">
+            <a href="https://www.facebook.com/rapradioafrica" className="social-link" aria-label="Facebook">
               <Facebook size={20} />
             </a>
-            <a href="#" className="social-link" aria-label="Instagram">
+            <a href="https://www.instagram.com/rapradioafrica/" className="social-link" aria-label="Instagram">
               <Instagram size={20} />
             </a>
-            <a href="#" className="social-link" aria-label="Twitter">
+            <a href="https://x.com/rapradioafrica" className="social-link" aria-label="Twitter">
               <Twitter size={20} />
             </a>
-            <a href="#" className="social-link" aria-label="YouTube">
+            <a href="https://www.youtube.com/@rapradioafrica" className="social-link" aria-label="YouTube">
               <Youtube size={20} />
             </a>
           </div>

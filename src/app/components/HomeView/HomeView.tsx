@@ -24,26 +24,28 @@ const HomeView = () => {
           </div>
           
           {/* Platform Icons */}
-          <div className="platform-section">
-            <span className="platform-label">Listening On :</span>
-            <div className="platform-icons">
-              <div className="platform-icon spotify">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/232px-Spotify_icon.svg.png" alt="Spotify" />
-              </div>
-              <div className="platform-icon soundcloud">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Antu_soundcloud.svg/240px-Antu_soundcloud.svg.png" alt="SoundCloud" />
-              </div>
-              <div className="platform-icon apple">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Podcasts_%28iOS%29.svg/240px-Podcasts_%28iOS%29.svg.png" alt="Apple Podcasts" />
-              </div>
-              <div className="platform-icon pandora">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Pandora_logo.svg/240px-Pandora_logo.svg.png" alt="Pandora" />
-              </div>
-              <div className="platform-icon tunein">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/TuneIn_Logo_2017.svg/240px-TuneIn_Logo_2017.svg.png" alt="TuneIn" />
+         {/* Platform Icons */}
+            <div className="platform-section">
+              <span className="platform-label">Listening On :</span>
+              <div className="platform-icons">
+                <div className="platform-icon apple">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Podcasts_%28iOS%29.svg/240px-Podcasts_%28iOS%29.svg.png" alt="Apple Podcasts" />
+                </div>
+                <div className="platform-icon soundcloud">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Antu_soundcloud.svg/240px-Antu_soundcloud.svg.png" alt="SoundCloud" />
+                </div>
+                <div className="platform-icon spotify">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/232px-Spotify_icon.svg.png" alt="Spotify" />
+                </div>
+                <div className="platform-icon pocketcasts">
+                  <img src="/pocketcasts.png" alt="Pocket Casts" />
+                </div>
+                <div className="platform-icon googlepodcasts">
+                  <img src="/ipu.png" alt="Google Podcasts" />
+                </div>
               </div>
             </div>
-          </div>
+
         </div>
         
         {/* Right Column */}
