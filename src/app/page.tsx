@@ -26,8 +26,8 @@ export default function HomePage() {
       <TeamSection />
       <TestimonialSection />
       <FAQ />
-      <ContactSection />
       <NewsletterSection />
+      <ContactSection />
       <Footer />
     </>
   );
