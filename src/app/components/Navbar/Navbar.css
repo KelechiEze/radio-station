@@ -26,9 +26,9 @@
 }
 
 .navbar-logo-image {
-  width: 70px;
+  width: 50px;         /* Reduced from 70px */
+  max-height: 40px;    /* Reduced from 50px */
   height: auto;
-  max-height: 50px;
   object-fit: contain;
 }
 
@@ -345,12 +345,13 @@ body.sidebar-open {
   margin: 0 0 8px 0;
 }
 
-.sidebar-logo-image{
-  width: 70px;
+.sidebar-logo-image {
+  width: 50px;         /* Reduce from 70px */
+  max-height: 40px;    /* Reduce from 50px */
   height: auto;
-  max-height: 50px;
   object-fit: contain;
 }
+
 
 .sidebar-tagline {
   color: #cccccc;

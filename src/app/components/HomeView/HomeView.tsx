@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Play } from 'lucide-react';
 import './HomeView.css';
 
@@ -16,64 +17,89 @@ const HomeView = () => {
             interviews, and the best in entertainment. Tune in now and never miss a 
             moment of the action!
           </p>
-          
+
           {/* CTA Buttons */}
           <div className="home-buttons">
-            <button className="btn-primary">Learn More</button>
-            <button className="btn-secondary">See All Episode</button>
+            <Link href="#about-us" className="btn-primary">
+              Learn More
+            </Link>
+            <a
+              href="https://www.youtube.com/@rapradioafrica/videos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              See All Episode
+            </a>
           </div>
-          
+
           {/* Platform Icons */}
-         {/* Platform Icons */}
-            <div className="platform-section">
-              <span className="platform-label">Listening On :</span>
-              <div className="platform-icons">
-                <div className="platform-icon apple">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Podcasts_%28iOS%29.svg/240px-Podcasts_%28iOS%29.svg.png" alt="Apple Podcasts" />
-                </div>
-                <div className="platform-icon soundcloud">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Antu_soundcloud.svg/240px-Antu_soundcloud.svg.png" alt="SoundCloud" />
-                </div>
-                <div className="platform-icon spotify">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/232px-Spotify_icon.svg.png" alt="Spotify" />
-                </div>
-                <div className="platform-icon pocketcasts">
-                  <img src="/pocketcasts.png" alt="Pocket Casts" />
-                </div>
-                <div className="platform-icon googlepodcasts">
-                  <img src="/ipu.png" alt="Google Podcasts" />
-                </div>
+          <div className="platform-section">
+            <span className="platform-label">Listening On :</span>
+            <div className="platform-icons">
+              <div className="platform-icon apple">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Podcasts_%28iOS%29.svg/240px-Podcasts_%28iOS%29.svg.png"
+                  alt="Apple Podcasts"
+                />
+              </div>
+              <div className="platform-icon soundcloud">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Antu_soundcloud.svg/240px-Antu_soundcloud.svg.png"
+                  alt="SoundCloud"
+                />
+              </div>
+              <div className="platform-icon spotify">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/232px-Spotify_icon.svg.png"
+                  alt="Spotify"
+                />
+              </div>
+              <div className="platform-icon pocketcasts">
+                <img src="/pocketcasts.png" alt="Pocket Casts" />
+              </div>
+              <div className="platform-icon googlepodcasts">
+                <img src="/ipu.png" alt="Google Podcasts" />
               </div>
             </div>
-
+          </div>
         </div>
-        
+
         {/* Right Column */}
         <div className="home-right">
           {/* Studio Image */}
           <div className="studio-image">
-            <img 
-              src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-              alt="Podcast Studio" 
+            <img
+              src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Podcast Studio"
             />
           </div>
-          
+
           {/* Happy Listener Card */}
           <div className="listener-card">
             <div className="listener-avatars">
               <div className="avatar">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&w=100&q=80" alt="Listener" />
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&w=100&q=80"
+                  alt="Listener"
+                />
               </div>
               <div className="avatar">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200" alt="Listener" />
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200"
+                  alt="Listener"
+                />
               </div>
               <div className="avatar">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=100&q=80" alt="Listener" />
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=100&q=80"
+                  alt="Listener"
+                />
               </div>
             </div>
             <h3 className="listener-title">Happy Listener</h3>
           </div>
-          
+
           {/* Play Button */}
           <div className="play-button2">
             <button className="play-btn2">

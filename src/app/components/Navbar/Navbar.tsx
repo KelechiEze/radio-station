@@ -34,6 +34,7 @@ const Navbar = () => {
             <li><Link href="#home" className="navbar-link">Home</Link></li>
             <li><Link href="#about-us" className="navbar-link">About Us</Link></li>
             <li><Link href="#give" className="navbar-link">Give</Link></li>
+            <li><Link href="#thecru" className="navbar-link">The Team</Link></li>
             <li><Link href="#contact-us" className="navbar-link">Contact Us</Link></li>
           </ul>
 
@@ -75,7 +76,7 @@ const Navbar = () => {
           <div className="sidebar-content">
             <div className="sidebar-logo">
               <Image src="/twu.png" alt="Podverse Logo" width={140} height={50} className="sidebar-logo-image" />
-              <p className="sidebar-tagline">Radio Station & Podcaster</p>
+              {/*<p className="sidebar-tagline">Radio Station & Podcaster</p>*/}
               <div className="sidebar-divider"></div>
             </div>
 

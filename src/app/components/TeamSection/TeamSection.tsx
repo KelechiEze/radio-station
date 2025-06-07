@@ -25,7 +25,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <div className="team-section">
+    <div id="thecru" className="team-section">
       <div className="team-container">
         <div className="team-cards">
           {teamMembers.map((member) => (
