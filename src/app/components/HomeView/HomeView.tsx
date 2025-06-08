@@ -1,7 +1,5 @@
-'use client';
-
-import Link from 'next/link';
 import { Play } from 'lucide-react';
+import VideoPlayer from '../YoutubePlayer/YoutubePlayer';
 import './HomeView.css';
 
 const HomeView = () => {
@@ -20,16 +18,16 @@ const HomeView = () => {
 
           {/* CTA Buttons */}
           <div className="home-buttons">
-            <Link href="#about-us" className="btn-primary">
+            <a href="#about-us" className="btn-primary">
               Learn More
-            </Link>
+            </a>
             <a
               href="https://www.youtube.com/@rapradioafrica/videos"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
             >
-              See All Episode
+              See All Episodes
             </a>
           </div>
 
@@ -56,10 +54,16 @@ const HomeView = () => {
                 />
               </div>
               <div className="platform-icon pocketcasts">
-                <img src="/pocketcasts.png" alt="Pocket Casts" />
+                <img 
+                  src="/pocketcasts.png" 
+                  alt="Pocket Casts" 
+                />
               </div>
               <div className="platform-icon googlepodcasts">
-                <img src="/ipu.png" alt="Google Podcasts" />
+                <img 
+                  src="/gogglepodcasts.png" 
+                  alt="Google Podcasts" 
+                />
               </div>
             </div>
           </div>
@@ -67,13 +71,8 @@ const HomeView = () => {
 
         {/* Right Column */}
         <div className="home-right">
-          {/* Studio Image */}
-          <div className="studio-image">
-            <img
-              src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-              alt="Podcast Studio"
-            />
-          </div>
+          {/* Video Player */}
+          <VideoPlayer />
 
           {/* Happy Listener Card */}
           <div className="listener-card">
@@ -97,12 +96,13 @@ const HomeView = () => {
                 />
               </div>
             </div>
-            <h3 className="listener-title">Happy Listener</h3>
+            <h3 className="listener-title">Happy Listeners</h3>
+            <p className="listener-count">1M+ Active Listeners</p>
           </div>
 
           {/* Play Button */}
-          <div className="play-button2">
-            <button className="play-btn2">
+          <div className="play-button-wrapper">
+            <button className="play-btn">
               <Play size={32} fill="#f94144" />
             </button>
           </div>
