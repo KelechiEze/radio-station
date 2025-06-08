@@ -108,7 +108,7 @@ const TestimonialSection: React.FC = () => {
               sollicitudin lacus nec, porta lacus. Cras ac turpis ut sem dictum luctus. Nam rhoncus, ante
               eu tempus interdum, purus lacus rutrum urna.
             </p>
-            <button className="more-testimonials-btn">MORE TESTIMONIALS</button>
+            {/*<button className="more-testimonials-btn">MORE TESTIMONIALS</button>*/}
           </div>
 
           <div className="testimonial-card-section">

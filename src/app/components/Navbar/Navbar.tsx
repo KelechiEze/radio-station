@@ -82,10 +82,10 @@ const Navbar = () => {
 
             {/* Contact Info */}
             <div className="sidebar-contact">
-              <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>KLLG St. No.99, Pku City, ID 28289</span></div>
-              <div className="sidebar-contact-item"><Phone className="sidebar-contact-icon" size={18} /><span>0761-8523-398</span></div>
-              <div className="sidebar-contact-item"><Mail className="sidebar-contact-icon" size={18} /><span>hello@domainsite.com</span></div>
-              <div className="sidebar-contact-item"><Globe className="sidebar-contact-icon" size={18} /><span>www.hellodomainsite.com</span></div>
+              <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>Lagos: 1, Ketu Close, Surulere, Lagos.</span></div>
+              <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>Enugu: 36, Sani Abacha Avenue, Trans Eluku, Enugu</span></div>
+              <div className="sidebar-contact-item"><Phone className="sidebar-contact-icon" size={18} /><span>+2348033133845</span></div>
+              <div className="sidebar-contact-item"><Mail className="sidebar-contact-icon" size={18} /><span>rapradioafrica@ gmail.com</span></div>
             </div>
 
             {/* Subscribe */}

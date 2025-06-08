@@ -9,7 +9,7 @@ const HomeView = () => {
         {/* Left Column */}
         <div className="home-left">
           <p className="home-subtitle">Turn Up the Volume</p>
-          <h1 className="home-title">Start Listening Your Favorite Podcast</h1>
+          <h1 className="home-title">Real Hiphop is now on radio</h1>
           <p className="home-description">
             Dive into our latest episodes and discover captivating stories, insightful 
             interviews, and the best in entertainment. Tune in now and never miss a 
@@ -97,15 +97,15 @@ const HomeView = () => {
               </div>
             </div>
             <h3 className="listener-title">Happy Listeners</h3>
-            <p className="listener-count">1M+ Active Listeners</p>
+            <p className="listener-count">100K+ Active Listeners</p>
           </div>
 
-          {/* Play Button */}
+          {/* Play Button 
           <div className="play-button-wrapper">
             <button className="play-btn">
               <Play size={32} fill="#f94144" />
             </button>
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>
