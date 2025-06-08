@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   Grid3X3, X, Facebook, Instagram, Youtube, Twitter, Twitch,
-  MapPin, Phone, Mail, Globe 
+  MapPin, Phone, Mail, 
 } from 'lucide-react';
 import './Navbar.css';
 
@@ -85,7 +85,7 @@ const Navbar = () => {
               <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>Lagos: 1, Ketu Close, Surulere, Lagos.</span></div>
               <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>Enugu: 36, Sani Abacha Avenue, Trans Eluku, Enugu</span></div>
               <div className="sidebar-contact-item"><Phone className="sidebar-contact-icon" size={18} /><span>+2348033133845</span></div>
-              <div className="sidebar-contact-item"><Mail className="sidebar-contact-icon" size={18} /><span>rapradioafrica@ gmail.com</span></div>
+              <div className="sidebar-contact-item"><Mail className="sidebar-contact-icon" size={18} /><span>rapradioafrica@gmail.com</span></div>
             </div>
 
             {/* Subscribe */}

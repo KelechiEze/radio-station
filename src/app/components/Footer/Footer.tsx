@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { MapPin, Phone, Mail, Globe, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -45,19 +45,15 @@ const Footer = () => {
             <div className="contact-items">
               <div className="contact-item">
                 <MapPin className="contact-icon" size={18} />
-                <span>KLLG St, No.99, Pku City, ID 28289</span>
+                <span>Lagos: 1, Ketu Close, Surulere, Lagos.</span>
               </div>
               <div className="contact-item">
                 <Phone className="contact-icon" size={18} />
-                <span>0761-8523-398</span>
+                <span>+2348033133845</span>
               </div>
               <div className="contact-item">
                 <Mail className="contact-icon" size={18} />
-                <span>hello@domainsite.com</span>
-              </div>
-              <div className="contact-item">
-                <Globe className="contact-icon" size={18} />
-                <span>www.hellodomainsite.com</span>
+                <span>rapradioafrica@gmail.com</span>
               </div>
             </div>
           </div>
@@ -91,7 +87,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="copyright">
-            <span>Copyright © 2024 Rometheme. All Rights Reserved.</span>
+            <span>Copyright © 2025 RapRadioAfrica. All Rights Reserved.</span>
           </div>
           <div className="social-links">
             <a href="https://www.facebook.com/rapradioafrica" className="social-link" aria-label="Facebook">

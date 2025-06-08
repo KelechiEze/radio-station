@@ -1,4 +1,5 @@
-import { Play } from 'lucide-react';
+'use client';
+
 import VideoPlayer from '../YoutubePlayer/YoutubePlayer';
 import './HomeView.css';
 
