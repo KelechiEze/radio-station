@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 import './TeamCard.css';
@@ -8,12 +6,13 @@ interface TeamCardProps {
   name: string;
   role: string;
   image: string;
+  onClick: () => void;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ name, role, image }) => {
+const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, onClick }) => {
   return (
     <div className="team-card">
-      <div className="card-image-container">
+      <div className="card-image-container" onClick={onClick}>
         <img src={image} alt={name} className="card-image" />
         <div className="card-overlay">
           <div className="social-icons">
@@ -29,6 +28,9 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, image }) => {
             <a href="#" className="social-link" aria-label="LinkedIn">
               <Linkedin size={20} />
             </a>
+          </div>
+          <div className="view-bio-overlay">
+            <span className="view-bio-text">View Bio</span>
           </div>
         </div>
       </div>
