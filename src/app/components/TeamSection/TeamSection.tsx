@@ -34,7 +34,7 @@ const TeamSection = () => {
     {
       id: 2,
       name: "Smith Ukpong Smith",
-      role: "Operations",
+      role: "Operations", 
       image: "/team22.png",
       bio: "Smith Ukpong Smith is a multifaceted individual; a lawyer, rapper and vibrant Hiphop show co-host with a magnetic personality. As co-convener of the Lyricist Lounge Nigeria brand, he assists to play a role in spotlighting lyrical excellence and nurturing emerging talent in the Nigerian Hiphop scene. His voice and vision also extend across the continent through the work that Rap Radio Africa is doing, where he contributes to shaping the narrative of a continent’s rap Kulture.",
       socialMedia: {
@@ -46,7 +46,7 @@ const TeamSection = () => {
       name: "Yusuf Ayobami",
       role: "Creative",
       image: "/team11.png",
-      bio: "Yusuf Omojola Ayobami is a rapper/singer/dancehall artiste/CEO, Yubami Music & Entertainment. Described by many as “creatively insane” he’s a door-opener for a new realm of Nigeria’s Hiphop, a fearless voice and one who brings thought-provokingness on his mic apparatus and insight to his penmanship",
+      bio: "Yusuf Omojola Ayobami is a rapper/singer/dancehall artiste/CEO, Yubami Music & Entertainment. Described by many as “creatively insane” he’s a door-opener for a new realm of Nigeria’s Hiphop, a fearless voice and one who brings thought-provokingness on his mic apparatus and insight to his penmanship.",
       socialMedia: {
         twitter: "https://x.com/EvgDaGreat12345"
       }
@@ -56,14 +56,14 @@ const TeamSection = () => {
       name: "Grace Okonye",
       role: "Business Development",
       image: "/huh25.jpg",
-      bio: "Her work span almost a decade in sales/marketing across a diverse range of goods and services. Armed with a Business Administration degree, she brings a solid foundation of hands-on expertise in customer relations, skilled creative/ideation, innovative content creation and strong relationship management.",
+      bio: "Her work span almost a decade in sales/marketing across a diverse range of goods and services. Armed with a Business Administration degree, she brings a solid foundation of hands-on expertise in customer relations, skilled creative/ideation, innovative content creation and strong relationship management.",
       socialMedia: {
         twitter: "https://twitter.com/marcusjohnson"
       }
     }
   ];
 
-  const handleCardClick = (member: TeamMember) => {
+  const handleCardClick = (member: TeamMember, event: React.MouseEvent) => {
     setSelectedMember(member);
     setIsModalOpen(true);
   };
@@ -78,14 +78,15 @@ const TeamSection = () => {
       <div className="team-container">
         <div className="team-cards-wrapper">
           <div className="team-cards-top">
-            {teamMembers.slice(0, 3).map((member) => (
+            {teamMembers.slice(0, 3).map((member, index) => (
               <TeamCard
                 key={member.id}
                 name={member.name}
                 role={member.role}
                 image={member.image}
                 socialMedia={member.socialMedia}
-                onClick={() => handleCardClick(member)}
+                onClick={(event) => handleCardClick(member, event)}
+                animationDelay={index * 0.2}
               />
             ))}
           </div>
@@ -96,7 +97,8 @@ const TeamSection = () => {
               role={teamMembers[3].role}
               image={teamMembers[3].image}
               socialMedia={teamMembers[3].socialMedia}
-              onClick={() => handleCardClick(teamMembers[3])}
+              onClick={(event) => handleCardClick(teamMembers[3], event)}
+              animationDelay={0.6}
             />
           </div>
         </div>
@@ -116,6 +118,7 @@ const TeamSection = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         member={selectedMember}
+        clickPosition={{ x: 0, y: 0 }}
       />
     </div>
   );

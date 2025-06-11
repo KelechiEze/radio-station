@@ -11,17 +11,28 @@ interface TeamCardProps {
   role: string;
   image: string;
   socialMedia: SocialMediaLinks;
-  onClick: () => void;
+  onClick: (event: React.MouseEvent) => void;
+  animationDelay?: number;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, socialMedia, onClick }) => {
+const TeamCard: React.FC<TeamCardProps> = ({ 
+  name, 
+  role, 
+  image, 
+  socialMedia, 
+  onClick, 
+  animationDelay = 0 
+}) => {
   const handleSocialClick = (e: React.MouseEvent, url: string) => {
     e.stopPropagation();
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className="team-card">
+    <div 
+      className="team-card" 
+      style={{ animationDelay: `${animationDelay}s` }}
+    >
       <div className="card-image-container" onClick={onClick}>
         <img src={image} alt={name} className="card-image" />
         <div className="card-overlay">

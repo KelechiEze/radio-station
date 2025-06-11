@@ -79,7 +79,7 @@ const HomeView = () => {
           {/* Music Player */}
           <MusicPlayer />
 
-          {/* Happy Listener Card */}
+          {/* Happy Listener Card 
           <div className="listener-card">
             <div className="listener-avatars">
               <div className="avatar">
@@ -103,7 +103,7 @@ const HomeView = () => {
             </div>
             <h3 className="listener-title">Happy Listeners</h3>
             <p className="listener-count">100K+ Active Listeners</p>
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>

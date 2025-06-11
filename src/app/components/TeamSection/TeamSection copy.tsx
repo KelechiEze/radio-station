@@ -1,12 +1,9 @@
-'use client';
-
 import React, { useState } from 'react';
 import TeamCard from '../TeamCard/TeamCard';
 import Modal from '../Modal/Modal';
 import './TeamSection.css';
 
-// Step 1: Define a TypeScript interface for team members
-interface TeamMember {
+type TeamMember = {
   id: number;
   name: string;
   role: string;
@@ -15,10 +12,9 @@ interface TeamMember {
   socialMedia: {
     twitter: string;
   };
-}
+};
 
 const TeamSection = () => {
-  // Step 2: Add types to state
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -52,11 +48,20 @@ const TeamSection = () => {
       socialMedia: {
         twitter: "https://x.com/EvgDaGreat12345"
       }
+    },
+    {
+      id: 4,
+      name: "Grace Okonye",
+      role: "Business Development",
+      image: "/hu25.jpg",
+      bio: "Her work span almost a decade in sales/marketing across a diverse range of goods and services. Armed with a Business Administration degree, she brings a solid foundation of hands-on expertise in customer relations, skilled creative/ideation, innovative content creation and strong relationship management.",
+      socialMedia: {
+        twitter: "https://twitter.com/marcusjohnson"
+      }
     }
   ];
 
-  // Step 3: Type the function parameter
-  const handleCardClick = (member: TeamMember) => {
+  const handleCardClick = (member: TeamMember, event: React.MouseEvent) => {
     setSelectedMember(member);
     setIsModalOpen(true);
   };
@@ -69,33 +74,49 @@ const TeamSection = () => {
   return (
     <div id="thecru" className="team-section">
       <div className="team-container">
-        <div className="team-cards">
-          {teamMembers.map((member) => (
+        <div className="team-cards-wrapper">
+          <div className="team-cards-top">
+            {teamMembers.slice(0, 3).map((member, index) => (
+              <TeamCard
+                key={member.id}
+                name={member.name}
+                role={member.role}
+                image={member.image}
+                socialMedia={member.socialMedia}
+                onClick={(event) => handleCardClick(member, event)}
+                animationDelay={index * 0.2}
+              />
+            ))}
+          </div>
+          <div className="team-card-solo">
             <TeamCard
-              key={member.id}
-              name={member.name}
-              role={member.role}
-              image={member.image}
-              socialMedia={member.socialMedia}
-              onClick={() => handleCardClick(member)}
+              key={teamMembers[3].id}
+              name={teamMembers[3].name}
+              role={teamMembers[3].role}
+              image={teamMembers[3].image}
+              socialMedia={teamMembers[3].socialMedia}
+              onClick={(event) => handleCardClick(teamMembers[3], event)}
+              animationDelay={0.6}
             />
-          ))}
+          </div>
         </div>
+
         <div className="team-content">
           <div className="team-badge">Broadcaster</div>
           <h2 className="team-title">Meet RapRadio Broadcasters</h2>
           <p className="team-description">
-            Our talented team of broadcasters brings you the best in hip-hop culture, 
-            from breaking news to exclusive interviews. Each host brings their unique 
+            Our talented team of broadcasters brings you the best in hip-hop culture,
+            from breaking news to exclusive interviews. Each host brings their unique
             perspective and deep passion for the music that moves us all.
           </p>
         </div>
       </div>
 
-      <Modal 
-        isOpen={isModalOpen} 
+      <Modal
+        isOpen={isModalOpen}
         onClose={handleCloseModal}
         member={selectedMember}
+        clickPosition={{ x: 0, y: 0 }}
       />
     </div>
   );

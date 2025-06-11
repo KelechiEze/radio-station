@@ -1,6 +1,5 @@
-'use client';
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { X } from 'lucide-react';
 import './Modal.css';
 
 interface ModalProps {
@@ -12,14 +11,19 @@ interface ModalProps {
     image: string;
     bio: string;
   } | null;
+  clickPosition: { x: number; y: number };
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, member }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, member, clickPosition }) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
   useEffect(() => {
     if (isOpen) {
+      setIsAnimating(true);
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+      setTimeout(() => setIsAnimating(false), 300);
     }
 
     return () => {
@@ -45,11 +49,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, member }) => {
 
   if (!member) return null;
 
+  const isMobile = window.innerWidth <= 768;
+
   return (
-    <div className={`modal-overlay ${isOpen ? 'modal-open' : ''}`} onClick={onClose}>
-      <div className={`modal-content ${isOpen ? 'modal-content-open' : ''}`} onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>
-          <span className="close-icon">&times;</span>
+    <div 
+      className={`modal-overlay ${isOpen ? 'modal-open' : ''}`} 
+      onClick={onClose}
+    >
+      <div 
+        className={`modal-content ${isOpen ? 'modal-content-open' : ''}`}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          '--click-x': isMobile ? '50%' : `${clickPosition.x}px`,
+          '--click-y': isMobile ? '50%' : `${clickPosition.y}px`,
+        } as React.CSSProperties}
+      >
+        <button className="modal-close" onClick={onClose} aria-label="Close modal">
+          <X size={20} />
         </button>
         
         <div className="modal-body">
