@@ -57,13 +57,13 @@ const HomeView = () => {
               </div>
               <div className="platform-icon pocketcasts">
                 <img 
-                  src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=100&h=100&fit=crop" 
+                  src="/pocketcasts.png" 
                   alt="Pocket Casts" 
                 />
               </div>
               <div className="platform-icon googlepodcasts">
                 <img 
-                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop" 
+                  src="/gogglepodcasts.png" 
                   alt="Google Podcasts" 
                 />
               </div>
