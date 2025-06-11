@@ -74,7 +74,7 @@ const NewsletterSection = () => {
             <div className="bank-details">
               <div className="bank-logo">
                 <img 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1326&q=80" 
+                  src="/kuda.png" 
                   alt="Bank logo" 
                   className="bank-logo-image"
                 />
@@ -83,23 +83,15 @@ const NewsletterSection = () => {
               <div className="bank-info">
                 <div className="bank-item">
                   <span className="bank-label">Bank Name:</span>
-                  <span className="bank-value">First Global Bank</span>
+                  <span className="bank-value">Kuda Bank</span>
                 </div>
                 <div className="bank-item">
                   <span className="bank-label">Account Name:</span>
-                  <span className="bank-value">Support Community</span>
+                  <span className="bank-value">Ikenna Mbah</span>
                 </div>
                 <div className="bank-item">
                   <span className="bank-label">Account Number:</span>
-                  <span className="bank-value">1234567890</span>
-                </div>
-                <div className="bank-item">
-                  <span className="bank-label">Swift Code:</span>
-                  <span className="bank-value">FGBUS123</span>
-                </div>
-                <div className="bank-item">
-                  <span className="bank-label">Routing Number:</span>
-                  <span className="bank-value">987654321</span>
+                  <span className="bank-value">1101611319</span>
                 </div>
               </div>
             </div>
