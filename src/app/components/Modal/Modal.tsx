@@ -19,31 +19,17 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, member, clickPosition }) => {
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
+      if (e.key === 'Escape') onClose();
     };
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-    };
+    if (isOpen) document.addEventListener('keydown', handleEscape);
+    return () => { document.removeEventListener('keydown', handleEscape); };
   }, [isOpen, onClose]);
 
   if (!member) return null;
@@ -51,10 +37,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, member, clickPosition })
   const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
 
   return (
-    <div
-      className={`modal-overlay ${isOpen ? 'modal-open' : ''}`}
-      onClick={onClose}
-    >
+    <div className={`modal-overlay ${isOpen ? 'modal-open' : ''}`} onClick={onClose}>
       <div
         className={`modal-content ${isOpen ? 'modal-content-open' : ''}`}
         onClick={(e) => e.stopPropagation()}
@@ -87,7 +70,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, member, clickPosition })
               <h2 className="modal-name">{member.name}</h2>
               <p className="modal-role">{member.role}</p>
             </div>
-
             <div className="modal-bio">
               <p className="modal-bio-text">{member.bio}</p>
             </div>
