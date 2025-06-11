@@ -34,7 +34,7 @@ const TeamSection = () => {
     {
       id: 2,
       name: "Smith Ukpong Smith",
-      role: "Operations", 
+      role: "Operations",
       image: "/team22.png",
       bio: "Smith Ukpong Smith is a multifaceted individual; a lawyer, rapper and vibrant Hiphop show co-host with a magnetic personality. As co-convener of the Lyricist Lounge Nigeria brand, he assists to play a role in spotlighting lyrical excellence and nurturing emerging talent in the Nigerian Hiphop scene. His voice and vision also extend across the continent through the work that Rap Radio Africa is doing, where he contributes to shaping the narrative of a continent’s rap Kulture.",
       socialMedia: {
@@ -63,7 +63,7 @@ const TeamSection = () => {
     }
   ];
 
-  const handleCardClick = (member: TeamMember, event: React.MouseEvent) => {
+  const handleCardClick = (member: TeamMember) => {
     setSelectedMember(member);
     setIsModalOpen(true);
   };
@@ -85,7 +85,7 @@ const TeamSection = () => {
                 role={member.role}
                 image={member.image}
                 socialMedia={member.socialMedia}
-                onClick={(event) => handleCardClick(member, event)}
+                onClick={() => handleCardClick(member)}
                 animationDelay={index * 0.2}
               />
             ))}
@@ -97,7 +97,7 @@ const TeamSection = () => {
               role={teamMembers[3].role}
               image={teamMembers[3].image}
               socialMedia={teamMembers[3].socialMedia}
-              onClick={(event) => handleCardClick(teamMembers[3], event)}
+              onClick={() => handleCardClick(teamMembers[3])}
               animationDelay={0.6}
             />
           </div>
