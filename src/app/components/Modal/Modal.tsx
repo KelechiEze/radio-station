@@ -65,7 +65,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, member }) => {
             </div>
             
             <div className="modal-bio">
-              <h3 className="modal-bio-title">Biography</h3>
               <p className="modal-bio-text">{member.bio}</p>
             </div>
           </div>
