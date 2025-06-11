@@ -1,6 +1,7 @@
 'use client';
 
 import VideoPlayer from '../YoutubePlayer/YoutubePlayer';
+import MusicPlayer from '../MusicPlayer/MusicPlayer';
 import './HomeView.css';
 
 const HomeView = () => {
@@ -10,7 +11,7 @@ const HomeView = () => {
         {/* Left Column */}
         <div className="home-left">
           <p className="home-subtitle">Turn Up the Volume</p>
-          <h1 className="home-title">Real Hiphop is now on radio</h1>
+          <h1 className="home-title">Real Hiphop is now on radio</h1>
           <p className="home-description">
             Dive into our latest episodes and discover captivating stories, insightful 
             interviews, and the best in entertainment. Tune in now and never miss a 
@@ -56,13 +57,13 @@ const HomeView = () => {
               </div>
               <div className="platform-icon pocketcasts">
                 <img 
-                  src="/pocketcasts.png" 
+                  src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=100&h=100&fit=crop" 
                   alt="Pocket Casts" 
                 />
               </div>
               <div className="platform-icon googlepodcasts">
                 <img 
-                  src="/gogglepodcasts.png" 
+                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop" 
                   alt="Google Podcasts" 
                 />
               </div>
@@ -74,6 +75,9 @@ const HomeView = () => {
         <div className="home-right">
           {/* Video Player */}
           <VideoPlayer />
+
+          {/* Music Player */}
+          <MusicPlayer />
 
           {/* Happy Listener Card */}
           <div className="listener-card">
@@ -100,13 +104,6 @@ const HomeView = () => {
             <h3 className="listener-title">Happy Listeners</h3>
             <p className="listener-count">100K+ Active Listeners</p>
           </div>
-
-          {/* Play Button 
-          <div className="play-button-wrapper">
-            <button className="play-btn">
-              <Play size={32} fill="#f94144" />
-            </button>
-          </div>*/}
         </div>
       </div>
     </section>

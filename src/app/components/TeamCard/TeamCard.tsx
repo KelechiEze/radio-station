@@ -1,32 +1,38 @@
 import React from 'react';
-import { Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Twitter } from 'lucide-react';
 import './TeamCard.css';
+
+interface SocialMediaLinks {
+  twitter: string;
+}
 
 interface TeamCardProps {
   name: string;
   role: string;
   image: string;
+  socialMedia: SocialMediaLinks;
   onClick: () => void;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, onClick }) => {
+const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, socialMedia, onClick }) => {
+  const handleSocialClick = (e: React.MouseEvent, url: string) => {
+    e.stopPropagation();
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="team-card">
       <div className="card-image-container" onClick={onClick}>
         <img src={image} alt={name} className="card-image" />
         <div className="card-overlay">
           <div className="social-icons">
-            <a href="#" className="social-link" aria-label="Twitter">
+            <a 
+              href="#" 
+              className="social-link" 
+              aria-label="Twitter"
+              onClick={(e) => handleSocialClick(e, socialMedia.twitter)}
+            >
               <Twitter size={20} />
-            </a>
-            <a href="#" className="social-link" aria-label="Facebook">
-              <Facebook size={20} />
-            </a>
-            <a href="#" className="social-link" aria-label="Instagram">
-              <Instagram size={20} />
-            </a>
-            <a href="#" className="social-link" aria-label="LinkedIn">
-              <Linkedin size={20} />
             </a>
           </div>
           <div className="view-bio-overlay">

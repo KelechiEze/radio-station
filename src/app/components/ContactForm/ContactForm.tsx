@@ -10,7 +10,6 @@ const ContactForm: React.FC = () => {
     countryCode: '+62',
     phone: '',
     email: '',
-    package: '',
     message: '',
   });
 
@@ -32,14 +31,12 @@ const ContactForm: React.FC = () => {
     setStatus('loading');
 
     try {
-      // Combine country code + phone
       const fullPhone = `${formData.countryCode}${formData.phone}`;
       const payload = {
         ...formData,
         phone: fullPhone,
       };
 
-      // Call your backend API route (Next.js API route)
       const res = await fetch('/api/sendemail', {
         method: 'POST',
         headers: {
@@ -55,7 +52,6 @@ const ContactForm: React.FC = () => {
           countryCode: '+62',
           phone: '',
           email: '',
-          package: '',
           message: '',
         });
       } else {
@@ -133,30 +129,7 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 3 - Package Selection */}
-        <div className="form-row">
-          <div className="input-group">
-            <select
-              name="package"
-              value={formData.package}
-              onChange={handleInputChange}
-              onFocus={() => setFocusedField('package')}
-              onBlur={() => setFocusedField(null)}
-              className={`select-input ${focusedField === 'package' ? 'focused' : ''} ${
-                formData.package ? 'has-value' : ''
-              }`}
-              required
-            >
-              <option value="">Please Choose Packages</option>
-              <option value="basic">Basic Package</option>
-              <option value="premium">Premium Package</option>
-              <option value="enterprise">Enterprise Package</option>
-              <option value="custom">Custom Package</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Row 4 - Message */}
+        {/* Row 3 - Message */}
         <div className="form-row">
           <div className="input-group">
             <textarea
@@ -173,7 +146,7 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 5 - Submit Button */}
+        {/* Row 4 - Submit Button */}
         <div className="form-row">
           <button type="submit" className="submit-button" disabled={status === 'loading'}>
             {status === 'loading' ? 'Sending...' : 'Send Message'}
@@ -189,15 +162,15 @@ const ContactForm: React.FC = () => {
       <div className="contact-details">
         <div className="contact-detail-item">
           <MapPin className="contact-icon" size={18} />
-          <span>KLLG St, No.99, Pku City, ID 28289</span>
+          <span>Lagos: 1, Ketu Close, Surulere, Lagos.</span>
         </div>
         <div className="contact-detail-item">
           <Mail className="contact-icon" size={18} />
-          <span>hello@domainsite.com</span>
+          <span>rapradioafrica@gmail.com</span>
         </div>
         <div className="contact-detail-item">
           <Phone className="contact-icon" size={18} />
-          <span>0761-8523-398</span>
+          <span>+2348033133845</span>
         </div>
         <div className="contact-detail-item">
           <Globe className="contact-icon" size={18} />

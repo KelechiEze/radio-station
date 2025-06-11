@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.play-button {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f94144 0%, #e63946 50%, #d62828 100%);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.button-icon {
+  position: relative;
+  z-index: 3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-icon svg {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ripple-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+/* Hover Effects */
+.play-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(249, 65, 68, 0.4);
+}
+
+.play-button:hover .button-background {
+  background: linear-gradient(135deg, #ff5a5e 0%, #f94144 50%, #e63946 100%);
+  transform: scale(1.1);
+}
+
+.play-button:hover .button-icon {
+  transform: scale(1.1);
+}
+
+.play-button:hover .button-icon svg {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* Active/Click Effects */
+.play-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.play-button:active .ripple-effect {
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+}
+
+/* Playing State */
+.play-button.playing {
+  animation: pulse 2s infinite;
+}
+
+.play-button.playing .button-background {
+  background: linear-gradient(135deg, #ff6b6b 0%, #f94144 50%, #e63946 100%);
+}
+
+.play-button.playing .button-icon {
+  animation: playingPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Glow Effect */
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #f94144, #e63946, #d62828);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  filter: blur(8px);
+}
+
+.play-button:hover::before {
+  opacity: 0.7;
+}
+
+/* Focus States */
+.play-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249, 65, 68, 0.3);
+}
+
+.play-button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(249, 65, 68, 0.5);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(249, 65, 68, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(249, 65, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 65, 68, 0);
+  }
+}
+
+@keyframes playingPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .play-button {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .button-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .button-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .play-button {
+    animation: none;
+    transition: none;
+  }
+  
+  .play-button.playing {
+    animation: none;
+  }
+  
+  .play-button.playing .button-icon {
+    animation: none;
+  }
+  
+  .ripple-effect {
+    transition: none;
+  }
+}
