@@ -19,6 +19,7 @@ type TeamMember = {
 const TeamSection = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
 
   const teamMembers: TeamMember[] = [
     {
@@ -63,7 +64,16 @@ const TeamSection = () => {
     }
   ];
 
-  const handleCardClick = (member: TeamMember) => {
+
+  const handleCardClick = (
+    member: TeamMember,
+    event: React.MouseEvent<Element>
+  ) => {
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    const clickX = rect.left + rect.width / 2;
+    const clickY = rect.top + rect.height / 2;
+
+    setClickPosition({ x: clickX, y: clickY });
     setSelectedMember(member);
     setIsModalOpen(true);
   };
@@ -85,20 +95,20 @@ const TeamSection = () => {
                 role={member.role}
                 image={member.image}
                 socialMedia={member.socialMedia}
-                onClick={() => handleCardClick(member)}
                 animationDelay={index * 0.2}
+                onClick={(e) => handleCardClick(member, e)}
               />
             ))}
           </div>
+
           <div className="team-card-solo">
             <TeamCard
-              key={teamMembers[3].id}
               name={teamMembers[3].name}
               role={teamMembers[3].role}
               image={teamMembers[3].image}
               socialMedia={teamMembers[3].socialMedia}
-              onClick={() => handleCardClick(teamMembers[3])}
               animationDelay={0.6}
+              onClick={(e) => handleCardClick(teamMembers[3], e)}
             />
           </div>
         </div>
@@ -108,8 +118,7 @@ const TeamSection = () => {
           <h2 className="team-title">Meet RapRadio Broadcasters</h2>
           <p className="team-description">
             Our talented team of broadcasters brings you the best in hip-hop culture,
-            from breaking news to exclusive interviews. Each host brings their unique
-            perspective and deep passion for the music that moves us all.
+            from breaking news to exclusive interviews...
           </p>
         </div>
       </div>
@@ -118,7 +127,7 @@ const TeamSection = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         member={selectedMember}
-        clickPosition={{ x: 0, y: 0 }}
+        clickPosition={clickPosition}
       />
     </div>
   );

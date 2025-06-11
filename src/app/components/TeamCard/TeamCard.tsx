@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Twitter } from 'lucide-react';
 import './TeamCard.css';
@@ -15,31 +17,32 @@ interface TeamCardProps {
   animationDelay?: number;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ 
-  name, 
-  role, 
-  image, 
-  socialMedia, 
-  onClick, 
-  animationDelay = 0 
+const TeamCard: React.FC<TeamCardProps> = ({
+  name,
+  role,
+  image,
+  socialMedia,
+  onClick,
+  animationDelay = 0,
 }) => {
   const handleSocialClick = (e: React.MouseEvent, url: string) => {
-    e.stopPropagation();
+    e.stopPropagation(); // prevents modal from opening
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div 
-      className="team-card" 
+    <div
+      className="team-card"
       style={{ animationDelay: `${animationDelay}s` }}
+      onClick={onClick}
     >
-      <div className="card-image-container" onClick={onClick}>
+      <div className="card-image-container">
         <img src={image} alt={name} className="card-image" />
         <div className="card-overlay">
           <div className="social-icons">
-            <a 
-              href="#" 
-              className="social-link" 
+            <a
+              href="#"
+              className="social-link"
               aria-label="Twitter"
               onClick={(e) => handleSocialClick(e, socialMedia.twitter)}
             >
