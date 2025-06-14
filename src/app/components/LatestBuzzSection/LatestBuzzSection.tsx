@@ -23,8 +23,8 @@ const LatestBuzzSection: React.FC = () => {
       id: 2,
       image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       date: '18 Dec',
-      title: "What's Next for Podverse: Upcoming Shows You'll Love",
-      excerpt: "Single Post Home – Single Post Dec 18, 2024 What's Next for Podverse: Upcoming Shows You'll Love Ever wondered how your..."
+      title: 'What&apos;s Next for Podverse: Upcoming Shows You&apos;ll Love',
+      excerpt: 'Single Post Home – Single Post Dec 18, 2024 What&apos;s Next for Podverse: Upcoming Shows You&apos;ll Love Ever wondered how your...'
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ const LatestBuzzSection: React.FC = () => {
       <div className="buzz-container">
         <div className="buzz-header">
           <p className="buzz-subtitle">The Latest Buzz</p>
-          <h2 className="buzz-title">What's Hot Right Now</h2>
+          <h2 className="buzz-title">What&apos;s Hot Right Now</h2>
         </div>
         
         <div className="buzz-grid">
