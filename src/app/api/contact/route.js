@@ -3,6 +3,18 @@ import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 
+// ✅ Handle preflight CORS (OPTIONS)
+export async function OPTIONS() {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
+}
+
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -11,7 +23,12 @@ export async function POST(req) {
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
-        { status: 400 }
+        {
+          status: 400,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+          },
+        }
       );
     }
 
@@ -43,7 +60,6 @@ export async function POST(req) {
           </div>
           <h2 style="color: #f94144; font-size: 2rem; margin: 0; font-weight: 900;">New Contact Inquiry</h2>
         </div>
-
         <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); margin-bottom: 30px;">
           <div style="display: grid; gap: 20px;">
             <div style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #f94144;">
@@ -96,8 +112,6 @@ export async function POST(req) {
         status: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers': 'Content-Type',
-          'Access-Control-Allow-Methods': 'POST',
         },
       }
     );

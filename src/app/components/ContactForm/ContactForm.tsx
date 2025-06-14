@@ -42,7 +42,7 @@ const ContactForm: React.FC = () => {
           ? 'https://radio-station-flax.vercel.app'
           : 'http://localhost:3001';
 
-      const res = await fetch(`${baseUrl}/api/sendemail`, {
+      const res = await fetch(`${baseUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
