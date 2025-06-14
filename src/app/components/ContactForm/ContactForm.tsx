@@ -37,11 +37,14 @@ const ContactForm: React.FC = () => {
         phone: fullPhone,
       };
 
-      const res = await fetch('/api/sendemail', {
+      const baseUrl =
+        process.env.NODE_ENV === 'production'
+          ? 'https://radio-station-flax.vercel.app'
+          : 'http://localhost:3001';
+
+      const res = await fetch(`${baseUrl}/api/sendemail`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
@@ -66,7 +69,7 @@ const ContactForm: React.FC = () => {
   return (
     <div className="contact-form-wrapper">
       <form className="contact-form" onSubmit={handleSubmit}>
-        {/* Row 1 - Name */}
+        {/* Name */}
         <div className="form-row">
           <div className="input-group">
             <input
@@ -83,7 +86,7 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 2 - Phone and Email */}
+        {/* Phone and Email */}
         <div className="form-row form-row-split">
           <div className="input-group">
             <div className="phone-input">
@@ -129,7 +132,7 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 3 - Message */}
+        {/* Message */}
         <div className="form-row">
           <div className="input-group">
             <textarea
@@ -146,19 +149,18 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 4 - Submit Button */}
+        {/* Submit */}
         <div className="form-row">
           <button type="submit" className="submit-button" disabled={status === 'loading'}>
             {status === 'loading' ? 'Sending...' : 'Send Message'}
           </button>
         </div>
 
-        {/* Status Messages */}
         {status === 'success' && <p className="success-message">Message sent successfully!</p>}
         {status === 'error' && <p className="error-message">Something went wrong. Please try again.</p>}
       </form>
 
-      {/* Contact Information */}
+      {/* Contact Info */}
       <div className="contact-details">
         <div className="contact-detail-item">
           <MapPin className="contact-icon" size={18} />
