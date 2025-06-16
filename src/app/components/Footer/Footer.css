@@ -264,17 +264,17 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #222222;
-  color: #ffffff;
+  background-color: #000000;
+  color: #E63946;
   text-decoration: none;
   border-radius: 50%;
   transition: all 0.3s ease;
-  border: 1px solid #333333;
+  border: 1px solid #E63946;
 }
 
 .social-link:hover {
   background-color: #E63946;
-  color: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
 }

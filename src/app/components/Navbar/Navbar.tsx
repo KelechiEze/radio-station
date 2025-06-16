@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   Grid3X3, X, Facebook, Instagram, Youtube, Twitter, Twitch,
-  MapPin, Phone, Mail, 
+  MapPin, Phone, Mail,
 } from 'lucide-react';
 import './Navbar.css';
 
@@ -19,6 +19,13 @@ const Navbar = () => {
   useEffect(() => {
     document.body.style.overflow = (isMenuOpen || isMobileNavOpen) ? 'hidden' : 'unset';
   }, [isMenuOpen, isMobileNavOpen]);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-us');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -40,8 +47,8 @@ const Navbar = () => {
 
           {/* Right Side Buttons */}
           <div className="navbar-actions">
-            <button className="navbar-talk-btn">Let&apos;s Talk</button>
-            
+            <button className="navbar-talk-btn" onClick={scrollToContact}>Let&apos;s Talk</button>
+
             <button className="navbar-mobile-nav-btn" onClick={toggleMobileNav} aria-label="Toggle mobile navigation">
               <div className="hamburger-lines"><span></span><span></span><span></span></div>
             </button>
@@ -76,14 +83,13 @@ const Navbar = () => {
           <div className="sidebar-content">
             <div className="sidebar-logo">
               <Image src="/twu.png" alt="Podverse Logo" width={140} height={50} className="sidebar-logo-image" />
-              {/*<p className="sidebar-tagline">Radio Station & Podcaster</p>*/}
               <div className="sidebar-divider"></div>
             </div>
 
             {/* Contact Info */}
             <div className="sidebar-contact">
               <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>Lagos: 1, Ketu Close, Surulere, Lagos.</span></div>
-              <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>Enugu: 36, Sani Abacha Avenue, Trans Eluku, Enugu</span></div>
+              <div className="sidebar-contact-item"><MapPin className="sidebar-contact-icon" size={18} /><span>Enugu: 36, Sani Abacha Avenue, Trans Eluku, Enugu</span></div>
               <div className="sidebar-contact-item"><Phone className="sidebar-contact-icon" size={18} /><span>+2348033133845</span></div>
               <div className="sidebar-contact-item"><Mail className="sidebar-contact-icon" size={18} /><span>rapradioafrica@gmail.com</span></div>
             </div>
