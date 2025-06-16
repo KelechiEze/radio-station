@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import { countryCodes } from '../../utils/countries';
 import './ContactForm.css';
@@ -15,6 +15,16 @@ const ContactForm: React.FC = () => {
 
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [baseUrl, setBaseUrl] = useState<string>('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isProd = process.env.NODE_ENV === 'production';
+      setBaseUrl(
+        isProd ? 'https://radio-station-flax.vercel.app' : window.location.origin
+      );
+    }
+  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -36,11 +46,6 @@ const ContactForm: React.FC = () => {
         ...formData,
         phone: fullPhone,
       };
-
-      const baseUrl =
-        process.env.NODE_ENV === 'production'
-          ? 'https://radio-station-flax.vercel.app'
-          : 'http://localhost:3001';
 
       const res = await fetch(`${baseUrl}/api/contact`, {
         method: 'POST',
@@ -75,7 +80,7 @@ const ContactForm: React.FC = () => {
             <input
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="Your Full Name"
               value={formData.name}
               onChange={handleInputChange}
               onFocus={() => setFocusedField('name')}
@@ -107,7 +112,7 @@ const ContactForm: React.FC = () => {
               <input
                 type="tel"
                 name="phone"
-                placeholder="Number Here"
+                placeholder="Mobile Phone Number"
                 value={formData.phone}
                 onChange={handleInputChange}
                 onFocus={() => setFocusedField('phone')}
@@ -121,7 +126,7 @@ const ContactForm: React.FC = () => {
             <input
               type="email"
               name="email"
-              placeholder="Email Here"
+              placeholder="Your Email Address"
               value={formData.email}
               onChange={handleInputChange}
               onFocus={() => setFocusedField('email')}
@@ -137,7 +142,7 @@ const ContactForm: React.FC = () => {
           <div className="input-group">
             <textarea
               name="message"
-              placeholder="Message Here"
+              placeholder="Write your message here. Tell us how we can help or leave your feedback!"
               value={formData.message}
               onChange={handleInputChange}
               onFocus={() => setFocusedField('message')}
@@ -152,12 +157,12 @@ const ContactForm: React.FC = () => {
         {/* Submit */}
         <div className="form-row">
           <button type="submit" className="submit-button" disabled={status === 'loading'}>
-            {status === 'loading' ? 'Sending...' : 'Send Message'}
+            {status === 'loading' ? 'Sending Message...' : 'Submit Message'}
           </button>
         </div>
 
-        {status === 'success' && <p className="success-message">Message sent successfully!</p>}
-        {status === 'error' && <p className="error-message">Something went wrong. Please try again.</p>}
+        {status === 'success' && <p className="success-message">Thanks! Your message has been sent successfully.</p>}
+        {status === 'error' && <p className="error-message">Oops! Something went wrong. Please try again.</p>}
       </form>
 
       {/* Contact Info */}
@@ -176,7 +181,7 @@ const ContactForm: React.FC = () => {
         </div>
         <div className="contact-detail-item">
           <Globe className="contact-icon" size={18} />
-          <span>www.hellodomainsite.com</span>
+          <span>www.rapradioafrica.com</span>
         </div>
       </div>
     </div>

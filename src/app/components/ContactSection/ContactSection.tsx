@@ -22,7 +22,7 @@ const ContactSection: React.FC = () => {
                 Any Question? Ask Us Anytime
               </h2>
               <p className="contact-description">
-                Nostra consectetur phasellus scelerisque auismod integer consectetur dictum netus. Sed ut eu neque turpis auismod massa. Potenti vivamus potenti suspendisse rutrum facilisi per.
+                We’d love to hear from you—whether you have questions, feedback, partnership inquiries, or want to get involved with Rap Radio Africa. Just fill out the form below and a member of our team will be in touch shortly.
               </p>
             </div>
             <ContactForm />

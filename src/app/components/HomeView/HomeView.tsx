@@ -5,6 +5,14 @@ import MusicPlayer from '../MusicPlayer/MusicPlayer';
 import './HomeView.css';
 
 const HomeView = () => {
+  // Smooth scroll to the news section
+  const scrollToNews = () => {
+    const newsSection = document.getElementById('news');
+    if (newsSection) {
+      newsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="home-view">
       <div className="home-container">
@@ -23,14 +31,9 @@ const HomeView = () => {
             <a href="#about-us" className="btn-primary">
               Learn More
             </a>
-            <a
-              href="https://www.youtube.com/@rapradioafrica/videos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              See All Episodes
-            </a>
+            <button onClick={scrollToNews} className="btn-secondary">
+              See Latest News
+            </button>
           </div>
 
           {/* Platform Icons */}
@@ -73,37 +76,8 @@ const HomeView = () => {
 
         {/* Right Column */}
         <div className="home-right">
-          {/* Video Player */}
           <VideoPlayer />
-
-          {/* Music Player */}
           <MusicPlayer />
-
-          {/* Happy Listener Card 
-          <div className="listener-card">
-            <div className="listener-avatars">
-              <div className="avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&w=100&q=80"
-                  alt="Listener"
-                />
-              </div>
-              <div className="avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200"
-                  alt="Listener"
-                />
-              </div>
-              <div className="avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=100&q=80"
-                  alt="Listener"
-                />
-              </div>
-            </div>
-            <h3 className="listener-title">Happy Listeners</h3>
-            <p className="listener-count">100K+ Active Listeners</p>
-          </div>*/}
         </div>
       </div>
     </section>

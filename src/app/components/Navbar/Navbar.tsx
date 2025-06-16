@@ -42,6 +42,7 @@ const Navbar = () => {
             <li><Link href="#about-us" className="navbar-link">About Us</Link></li>
             <li><Link href="#give" className="navbar-link">Give</Link></li>
             <li><Link href="#thecru" className="navbar-link">The Crew</Link></li>
+            <li><Link href="#news" className="navbar-link">News</Link></li>
             <li><Link href="#contact-us" className="navbar-link">Contact Us</Link></li>
           </ul>
 

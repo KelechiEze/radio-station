@@ -31,11 +31,9 @@ const Footer = () => {
           <div className="footer-column pages-column">
             <h3 className="column-title">Pages</h3>
             <ul className="footer-links">
-              <li><a href="#" className="footer-link">Home</a></li>
-              <li><a href="#" className="footer-link">About Us</a></li>
-              <li><a href="#" className="footer-link">Programs</a></li>
-              <li><a href="#" className="footer-link">Articles</a></li>
-              <li><a href="#" className="footer-link">Contact Us</a></li>
+              <li><a href="#home" className="footer-link">Home</a></li>
+              <li><a href="#about-us" className="footer-link">About Us</a></li>
+              <li><a href="#contact-us" className="footer-link">Contact Us</a></li>
             </ul>
           </div>
 

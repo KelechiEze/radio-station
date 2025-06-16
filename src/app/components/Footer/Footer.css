@@ -305,49 +305,50 @@
 
   .logo-text {
     font-size: 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .logo-subtitle {
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 1rem;
+    text-align: left;
   }
 
   .mission-text {
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
   }
 
   .column-title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 1rem;
   }
 
   .footer-links {
-    text-align: center;
+    text-align: left;
   }
 
   .contact-items {
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
   }
 
   .contact-item {
-    justify-content: center;
-    max-width: 300px;
-    margin: 0 auto;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin: 0;
   }
 
   .newsletter-column {
-    text-align: center;
+    text-align: left;
   }
 
   .input-container {
     flex-direction: column;
     gap: 0.75rem;
-    max-width: 300px;
-    margin: 0 auto 1.5rem;
+    max-width: 100%;
+    margin: 0 0 1.5rem;
   }
 
   .email-input {
@@ -362,19 +363,20 @@
 
   .stats-container {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 1.5rem;
-    text-align: center;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .social-links {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
