@@ -154,15 +154,23 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Submit */}
+        {/* Submit Button with Spinner */}
         <div className="form-row">
           <button type="submit" className="submit-button" disabled={status === 'loading'}>
-            {status === 'loading' ? 'Sending Message...' : 'Submit Message'}
+            {status === 'loading' ? (
+              <span className="spinner"></span>
+            ) : (
+              'Submit Message'
+            )}
           </button>
         </div>
 
-        {status === 'success' && <p className="success-message">Thanks! Your message has been sent successfully.</p>}
-        {status === 'error' && <p className="error-message">Oops! Something went wrong. Please try again.</p>}
+        {status === 'success' && (
+          <p className="success-message">Thanks! Your message has been sent successfully.</p>
+        )}
+        {status === 'error' && (
+          <p className="error-message">Oops! Something went wrong. Please try again.</p>
+        )}
       </form>
 
       {/* Contact Info */}
