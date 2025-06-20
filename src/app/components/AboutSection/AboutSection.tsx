@@ -13,7 +13,7 @@ const AboutSection = () => {
           <div className="about-text">
             <h3 className="about-subtitle">About Us</h3>
             <h1 className="about-title">
-              Presenting The Best Headlines To You Always
+              Presenting The Best Radio adn News Headlines To You Always
             </h1>
             <p className="about-description">
              Founded officially on January 4th 2016, Africa’s first Internet radio station has not only been a loud and gnawing voice of an unapologetic Culture, but also a wind instrument in the hands of its dopest practitioners going on a decade.  We’re not just a radio station; we’re the heartbeat of rap music in Africa; showcasing and promoting the four corners of the continent; from the neoteric indigenous notions of the North to the always vibey but voracious verses of the South, from the stylistic and melodic bars from the East to the age-long knocking penmanship from the West - we pay attention to all spin-off genres of Hiphop; Classics, Golden age, Alternative, Cloud Rap, Underground, Boombap, Conscious Rap, Grunge, Drill, Kwaito and the newly experimental Afrobeats-rap nothing is off the table, even some wack joints sometimes. There’s street talk to soul-stirring stories and never-heard-befores, as we amplify “the most intelligent music genre” with the music and voices that’s shaping Africa’s Hiphop culture on the continent as well as the diaspora.
